@@ -1,0 +1,268 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --primary-background: #f5c21e;
+    --primary-foreground: #121722;
+    --primary-light: #ffdd57;
+    --primary-dark: #b18f0a;
+
+    /* Secondary Colors */
+    --secondary-background: #ffffff;
+    --secondary-foreground: #333333;
+    --secondary-light: #f7f7f7;
+    --secondary-dark: #222222;
+
+    /* Accent Colors */
+    --accent-color: #ff5733;
+    --accent-foreground: #ffffff;
+    --accent-light: #ff8268;
+    --accent-dark: #cc4722;
+
+    /* Border Colors */
+    --border-primary: #cccccc;
+    --border-secondary: #999999;
+    --border-light: #e0e0e0;
+    --border-dark: #666666;
+
+    /* Banking specific colors */
+    --banking-green: #00e376;
+    --banking-cyan: #00c7ee;
+    --banking-gray: #262626;
+    --banking-light-gray: #fbfbfb;
+  }
+}
+
+@layer utilities {
+  /* Background Color Utilities */
+  .bg-primary-yellow {
+    background-color: var(--primary-background);
+  }
+
+  .bg-primary-light {
+    background-color: var(--primary-light);
+  }
+
+  .bg-primary-dark {
+    background-color: var(--primary-dark);
+  }
+
+  .bg-secondary-white {
+    background-color: var(--secondary-background);
+  }
+
+  .bg-secondary-light {
+    background-color: var(--secondary-light);
+  }
+
+  .bg-secondary-dark {
+    background-color: var(--secondary-dark);
+  }
+
+  .bg-accent {
+    background-color: var(--accent-color);
+  }
+
+  .bg-accent-light {
+    background-color: var(--accent-light);
+  }
+
+  .bg-accent-dark {
+    background-color: var(--accent-dark);
+  }
+
+  .bg-banking-green {
+    background-color: var(--banking-green);
+  }
+
+  .bg-banking-cyan {
+    background-color: var(--banking-cyan);
+  }
+
+  .bg-banking-gray {
+    background-color: var(--banking-gray);
+  }
+
+  .bg-banking-light-gray {
+    background-color: var(--banking-light-gray);
+  }
+
+  /* Text Color Utilities */
+  .text-primary-black {
+    color: var(--primary-foreground);
+  }
+
+  .text-secondary-gray {
+    color: var(--secondary-foreground);
+  }
+
+  .text-accent-white {
+    color: var(--accent-foreground);
+  }
+
+  .text-banking-green {
+    color: var(--banking-green);
+  }
+
+  .text-banking-cyan {
+    color: var(--banking-cyan);
+  }
+
+  .text-banking-gray {
+    color: var(--banking-gray);
+  }
+
+  /* Border Color Utilities */
+  .border-primary {
+    border-color: var(--border-primary);
+  }
+
+  .border-secondary {
+    border-color: var(--border-secondary);
+  }
+
+  .border-light {
+    border-color: var(--border-light);
+  }
+
+  .border-dark {
+    border-color: var(--border-dark);
+  }
+
+  .border-banking-green {
+    border-color: var(--banking-green);
+  }
+
+  /* Custom gradient utilities */
+  .bg-gradient-banking {
+    background: linear-gradient(134deg, #00e376 0%, #00c7ee 100%);
+  }
+
+  .bg-gradient-card {
+    background: linear-gradient(153deg, #02ed7d 0%, #0dc76e 50%, #018747 100%);
+  }
+
+  /* Custom shadow utilities */
+  .shadow-banking {
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.086);
+  }
+
+  /* Document selection specific utilities */
+  .bg-green-25 {
+    background-color: rgba(0, 227, 118, 0.05);
+  }
+
+  /* Sidebar specific utilities */
+  .sidebar-connector {
+    background: linear-gradient(to bottom, #d1d5db 0%, #d1d5db 100%);
+  }
+
+  .sidebar-connector-active {
+    background: linear-gradient(to bottom, #00e376 0%, #00e376 100%);
+  }
+
+  /* Business Information Form specific utilities */
+  .bg-green-light {
+    background-color: rgba(0, 227, 118, 0.1);
+  }
+
+  .border-green-light {
+    border-color: rgba(0, 227, 118, 0.3);
+  }
+
+  /* Form specific utilities */
+  .form-input {
+    @apply w-full h-14 px-3 py-4 border border-gray-300 rounded text-base;
+  }
+.form-input:focus  {
+    @apply border-banking-green ring-1 outline-none;
+  }
+
+  .form-input::placeholder {
+    @apply text-gray-400;
+  }
+
+  /* Button specific utilities */
+  .btn-banking-primary {
+    background: linear-gradient(134deg, #00e376 0%, #00c7ee 100%);
+    @apply text-gray-800 font-normal;
+  }
+
+  .btn-banking-outline {
+    @apply border border-banking-green text-gray-700 bg-white;
+  }
+
+  .btn-banking-outline:hover {
+    @apply bg-green-50;
+  }
+
+  /* Checkbox utilities */
+  .checkbox-banking {
+    @apply w-3.5 h-3.5 border border-gray-300 rounded-sm;
+  }
+
+  .checkbox-banking:checked {
+    @apply bg-banking-green border-banking-green;
+  }
+
+  /* Radio button utilities */
+  .radio-banking {
+    @apply h-9 px-6 flex items-center justify-center rounded cursor-pointer transition-all;
+  }
+
+  .radio-banking-active {
+    background: linear-gradient(134deg, #00e376 0%, #00c7ee 100%);
+    @apply text-gray-800;
+  }
+
+  .radio-banking-inactive {
+    @apply border border-banking-green text-gray-700 bg-white;
+  }
+
+  .radio-banking-inactive:hover {
+    @apply bg-green-50;
+  }
+
+  /* Personal Information specific utilities */
+  .personal-info-security-notice {
+    background: rgba(0, 227, 118, 0.1);
+    border: 1px solid rgba(0, 227, 118, 0.2);
+  }
+
+  .personal-info-title {
+    @apply text-3xl font-medium text-banking-gray leading-10;
+  }
+
+  .personal-info-subtitle {
+    @apply text-gray-700 text-base;
+  }
+
+  .business-owner-toggle {
+    @apply h-9 px-6 rounded text-base font-normal transition-all cursor-pointer flex items-center justify-center;
+  }
+
+  .business-owner-toggle-active {
+    background: linear-gradient(134deg, #00e376 0%, #00c7ee 100%);
+    @apply text-gray-800;
+  }
+
+  .business-owner-toggle-inactive {
+    @apply border border-banking-green text-gray-700 bg-white;
+  }
+
+  .business-owner-toggle-inactive:hover {
+    @apply bg-green-50;
+  }
+
+  .continue-btn {
+    background: linear-gradient(134deg, #00e376 0%, #00c7ee 100%);
+    @apply text-gray-800 font-normal h-12 px-12 rounded text-base flex items-center space-x-2;
+  }
+
+  .continue-btn:hover {
+    @apply opacity-90;
+  }
+}
